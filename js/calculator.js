@@ -5,7 +5,7 @@ let $ = function(id) {
 }
 
 function enter (i) {
-    $('result').value = $('result').value + i;
+    $('result').value = $('result').value + i.target.value;
 }
 
 function calculate() {
@@ -13,17 +13,18 @@ function calculate() {
 }
 
 function init() {
+    //SECOND OPTION:
     const calculator = document.getElementById('calculator');
     calculator.addEventListener('click', (event) => {
-        let enteredChar = event.target.value;
-        if (enteredChar === '=') {
+        if (event.target.value === '=') {
             calculate();
         }
         else {
-        enter(enteredChar);
-        // break;
+        enter(event);
         }
     })
+
+    //FIRST OPTION:
     // $('seven').addEventListener('click', enter);
     // $('eight').addEventListener('click', enter);
     // $('nine').addEventListener('click', enter);

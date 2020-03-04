@@ -1,6 +1,15 @@
 body {
     align-items: center;
 }
+input {
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+}
+div :not(:first-child):hover {
+    background-color: lightgrey;
+}
 div {
     width: 300px;
     height: 400px;
@@ -8,21 +17,20 @@ div {
     border-radius: 4px;
     text-align: center;
     background-color: silver;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -150px;
 }
-input {
-    width: 60px;
-    height: 60px;
-    border-radius: 3px;
-}
+
 div :nth-child(1) {
     width: 244px;
     height: 50px;
-    margin-top: 25px;
+    margin-top: 20px;
     text-align: right;
 }
-div :nth-child(odd){
+div :nth-child(even){
     margin-top: 15px;
-
 }
 
 

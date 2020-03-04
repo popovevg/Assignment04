@@ -1,22 +1,11 @@
-// window.addEventListener("load", init, false);
-
-let body = document.querySelector('body');
-let buttons = document.querySelectorAll('input');
-buttons.addEventListener('click', (target) => {
-    alert(target.currentTarget.tagName);
-})
-// seven.addEventListener('click', enter); 
-// body.addEventListener('click', (target) => {
-//     alert(target.currentTarget.tagName);
-// })
-
+window.addEventListener("load", init, false);
 
 let $ = function(id) {
     return window.document.getElementById(id);
 }
 
 function enter (i) {
-    $('result').value = $('result').value + i.target.value;
+    $('result').value = $('result').value + i;
 }
 
 function calculate() {
@@ -24,6 +13,17 @@ function calculate() {
 }
 
 function init() {
+    const calculator = document.getElementById('calculator');
+    calculator.addEventListener('click', (event) => {
+        let enteredChar = event.target.value;
+        if (enteredChar === '=') {
+            calculate();
+        }
+        else {
+        enter(enteredChar);
+        // break;
+        }
+    })
     // $('seven').addEventListener('click', enter);
     // $('eight').addEventListener('click', enter);
     // $('nine').addEventListener('click', enter);
@@ -41,6 +41,3 @@ function init() {
     // $('add').addEventListener('click', enter);
     // $('equal').addEventListener('click', calculate);
 }
-
-
-
